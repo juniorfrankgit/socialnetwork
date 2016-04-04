@@ -1,0 +1,35 @@
+header {
+	background-color: blue;
+	height: 130px;
+	position: relative;
+	bottom: 20px;
+}
+footer {
+	background-color: blue;
+	position: relative;
+}
+section {
+		text-align: center;
+}
+#title1 {
+	text-align: center;
+}
+#form1 {
+	position: relative;
+	bottom: 20px;
+}
+#form2 {
+	text-align: center;
+}
+
+#img1 {
+	width: 800px;
+	height: 260px;
+}
+.data {
+	position: relative;
+	bottom: 10px;
+}
+label,h2, h1{
+	color: white;
+}
