@@ -9,39 +9,41 @@
 	</head>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-	<script src="/angularjs/socialnetwork.js"></script>
+	<script src="/angularjs/js/socialnetwork.js"></script>
 	
 	<body ng-controller="MainCtrl">
 	   <header>
 	    <h1 id="title1" >WELCOME TO THE SOCIAL NETWORK</h1>
-		
-		<form id="form1" method="post" action="">
-				<h2 style="text-align:center">Login as a registered user</h2> 
-			  	<div style="text-align:center" >
-			  		<label>Username: </label><input type="text" name="username">
-			  		<label>Password: </label><input type="password" name="password" >
-			  		<input type="submit" value="Log In" id="loginbutton">
-			  	</div>
-			 
-		</form>
+		<div ng-controller="LoginCtrl">
+			<form id="form1" method="post" action="login_success">
+					<h2 style="text-align:center">Login as a registered user</h2> 
+				  	<div style="text-align:center" >
+				  		<label>Email: </label><input type="text" name="email1">
+				  		<label>Password: </label><input type="password" name="password1" >
+				  		<input type="submit" value="Log In" id="loginbutton">
+				  	</div>
+				 
+			</form>
+		</div>
 		</header>
-		<section><img src="socialnetwork.jpg" id="img1"></section>
-		<footer>			
-				 <form id="form2" method="post" action="login" >
+		<section><img src="/img/socialnetwork.jpg" id="img1" ng-hide="yes"></section>
+		
+		<footer>
+			<div ng-controller="NewAccountCtrl" >			
+				 <form id="form2" method="post" action="registration_success">
 		  			<h2 >Create an account</h2>	
 		  			<div class="data">
 		  			 	<input type="text" name="lastname" id="name" placeholder="Lastname">
 		  			 	<input type="text" name="firstname" id="firstname" placeholder="firstname">
-		  			 	<input type="text" name="email" id="email" placeholder="Email"><br>
-		  			 	<input type="password" name="password" id="password" placeholder="Password"><br/>
+		  			 	<input type="text" name="email2" id="email" placeholder="Email"><br>
+		  			 	<input type="password" name="password" id="password2" placeholder="Password"><br/>
 		  			 	<input type="submit" id="createaccount" value="Create an account">
 		  			</div>
 		  			
 				 </form> 
+			</div>	
 		</footer>
 
 			
 	</body>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-	<script src="/angularjs/socialnetwork.js"></script>
 </html>

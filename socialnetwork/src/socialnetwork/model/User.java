@@ -1,9 +1,14 @@
 package socialnetwork.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.Embedded;
 /**
  *Model class which will store the users
  *This class represent a table on the data base
@@ -11,7 +16,8 @@ import javax.persistence.Id;
  *
  */
 @Entity
-public class User {
+@SuppressWarnings("serial") 
+public class User implements java.io.Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -21,7 +27,8 @@ public class User {
 	private String firstname;
 	private String email;
 	
-	public User(Long id,String lastname,String firstname,String email, String password) {
+	public User(Long id,String lastname,String firstname,String email, 
+			String password) {
 		super();
 		this.lastname = lastname;
 		this.password = password;

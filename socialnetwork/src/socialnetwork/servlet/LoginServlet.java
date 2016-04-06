@@ -1,37 +1,37 @@
 package socialnetwork.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import socialnetwork.model.*;
 import socialnetwork.dao.Dao;
 import socialnetwork.dbaccess.*;
+import socialnetwork.model.User;
 /***
- * This servlet allow to add a new user in the db
+ * This servlet allows to login
  * @author le06
  *
  */
-@SuppressWarnings("serial")
-public class CreateUserServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		System.out.println("Creating new user ");
+		System.out.println("login a User");
 		DBAccess dba = new DBAccess();
-		User user = dba.newAccount(req.getParameter("lastname"), req.getParameter("firstname"), 
-		req.getParameter("email2"), req.getParameter("password2"));
+		User user = dba.login(req.getParameter("email1"));
+		if(user == null) {
+			resp.sendRedirect("/loginError.jsp");
+			return;
+		}
 		req.setAttribute( "user", user);
-		try {
+
+	    try {
 			this.getServletContext().getRequestDispatcher( "/welcome.jsp" ).forward( req, resp );
 		} catch (ServletException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

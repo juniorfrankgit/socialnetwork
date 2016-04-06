@@ -1,0 +1,36 @@
+header {
+	background-color: blue;
+	
+}
+footer {
+	background-color: blue;
+}
+section {
+	text-align: center;
+}
+#title1 {
+	text-align: left;
+	color:white;
+}
+img.profile {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	bottom: 50px;
+
+
+}
+div.profile {
+	text-align: center;
+}
+
+#file {
+	position: relative;
+	bottom: 50px;
+	left: 30px;
+}
+
+#lab {
+	position: relative;
+	bottom: 50px;
+}
